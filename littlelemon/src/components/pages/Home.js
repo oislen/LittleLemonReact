@@ -1,3 +1,5 @@
+import bannerImg from "../../assets/restauranfood.jpg";
+
 const Home = () => {
   return (
     <div className="webPage">
@@ -9,6 +11,9 @@ const Home = () => {
             We are a family owned Mediterraneran restaurant, focused on
             traditional recipes served with a modern twist.
           </p>
+        </div>
+        <div className="banner-img">
+          <img src={bannerImg} alt="" />
         </div>
       </section>
     </div>
