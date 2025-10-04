@@ -65,14 +65,14 @@ nav ul li a:hover {
   transition: all 0.3s ease-in-out;
 }
 
-/* header section */
+/* web page section */
 
-.header {
+.webPage {
   background-color: #495e57;
   padding: 40px 0;
 }
 
-.header section {
+.webPage section {
   color: #edefee;
   padding: 10px 13%;
   position: relative;
