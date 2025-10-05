@@ -5,7 +5,7 @@ const BookingForm = (props) => {
 
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [guests, setGuests] = useState("");
+  const [guests, setGuests] = useState("1");
   const [occasion, setOccasion] = useState("");
 
   var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
