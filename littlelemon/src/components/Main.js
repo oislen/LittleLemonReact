@@ -8,20 +8,44 @@ import Bookings from "./pages/Bookings"
 
 const Main = () => {
 
-  const updateTimes = function(){
-    let allAvailableTimes=["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-    let availableTimes=["Select a Time"];
-    for (const availableTime of allAvailableTimes){
-      let random = Math.random();
-      if (random < 0.5) {
-        availableTimes.push(availableTime)
-      }
-    }
-    return availableTimes;
+  const seededRandom = function (seed) {
+      var m = 2**35 - 31;
+      var a = 185852;
+      var s = seed % m;
+      return function () {
+          return (s = s * a % m) / m;
+      };
   }
 
-  const initialState = updateTimes();
+  const fetchAPI = function(date) {
+      let result = [];
+      let random = seededRandom(date.getDate());
+
+      for(let i = 17; i <= 23; i++) {
+          if(random() < 0.5) {
+              result.push(i + ':00');
+          }
+          if(random() < 0.5) {
+              result.push(i + ':30');
+          }
+      }
+      return result;
+  };
+
+  const submitAPI = function(formData) {
+      return true;
+  };
+
+  function updateTimes(state, date) {
+    return fetchAPI(new Date());
+  }
+
+  const initialState = fetchAPI(new Date());
   const [state, dispatch] = useReducer(updateTimes, initialState);
+
+  function submitForm(formData) {
+    alert("Booking successful!");
+  }
 
   return (
     <main>
@@ -30,7 +54,7 @@ const Main = () => {
           <Route  path="/" element={<Home />} />
           <Route  path="/about" element={<About />} />
           <Route  path="/menu" element={<Menu />} />
-          <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} />} />
+          <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitForm={submitForm} />} />
         </Routes>
       </Router>
     </main>

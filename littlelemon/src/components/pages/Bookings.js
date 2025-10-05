@@ -9,7 +9,7 @@ const Bookings = (props) => {
           <div className="row">
             <div className="column">
               <h2>Bookings</h2>
-              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} />
+              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={props.submitForm}/>
             </div>
             <div className="column">
               <figure className="figure" >

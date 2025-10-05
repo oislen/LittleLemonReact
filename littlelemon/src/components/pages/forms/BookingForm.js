@@ -12,7 +12,7 @@ const BookingForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Booking successful!");
+    props.submitForm(e);
   };
 
   const handleChange = (e) => {
