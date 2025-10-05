@@ -181,10 +181,23 @@ main article {
 	height: 100%;
 }
 
+form, .confirm {
+  display: inline;
+  margin: auto;
+  padding: 2rem;
+}
+
+.formField {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
 input, label {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
 }
 
 #book-date, #book-time, #book-guests, #book-occasion {
@@ -193,20 +206,25 @@ input, label {
   border: none;
   outline: none;
   border-radius: 2px;
+  font-size: 1.3rem;
 }
 
 .btnReceive input {
-  padding: 12px 16px;
-  margin-top: 20px;
-  background: #495e57;
-  color: #fff;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #333;
   border: none;
-  border-radius: 4px;
+  border-radius: 1rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #edefee;
 }
 
-.confirm span {
-  color: blue;
+.btnReceive input:hover {
+    color: #495e57;
+    text-decoration: underline;
 }
+
 
 /* Footer */
 
