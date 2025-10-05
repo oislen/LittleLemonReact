@@ -1,7 +1,7 @@
 import BookingForm from "./forms/BookingForm";
 import aboutImage from "../../assets/lemon dessert B.jpg";
 
-const Bookings = () => {
+const Bookings = (props) => {
   return (
     <>
       <section>
@@ -9,7 +9,7 @@ const Bookings = () => {
           <div className="row">
             <div className="column">
               <h2>Bookings</h2>
-              <BookingForm />
+              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} />
             </div>
             <div className="column">
               <figure className="figure" >
