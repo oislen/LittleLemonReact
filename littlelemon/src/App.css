@@ -55,6 +55,7 @@ nav ul a:active {
 }
 
 nav ul a:hover {
+    color: #495e57;
     text-decoration: underline;
     text-decoration-thickness: 0.1rem;
 }
@@ -83,12 +84,26 @@ article ul {
     font-size: 1.3rem;
 }
 
-article a:link {
+.pButton {
+    background-color: #333;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+article a {
     font-size: 1.3rem;
+    text-decoration: none;
+    color: #edefee;
 }
 
 article a:hover {
     color: #495e57;
+    text-decoration: underline;
 }
 
 article a:active {
