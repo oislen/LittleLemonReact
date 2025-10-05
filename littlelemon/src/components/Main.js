@@ -37,7 +37,7 @@ const Main = () => {
   };
 
   function updateTimes(state, date) {
-    return fetchAPI(new Date());
+    return fetchAPI(new Date(date));
   }
 
   const initialState = fetchAPI(new Date());
