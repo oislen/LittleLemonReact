@@ -15,7 +15,7 @@ const Bookings = () => {
               <figure className="figure" >
                 <img src={aboutImage}  alt="Mario and Adrian"/>
                 <figcaption className="figure-caption">
-                  Little Lemon owners Mario and Adrian.
+                  Lemon Dessert
                 </figcaption>
               </figure>
             </div>
