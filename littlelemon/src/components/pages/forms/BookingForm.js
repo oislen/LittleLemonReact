@@ -8,7 +8,7 @@ const BookingForm = (props) => {
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
-  var availableTimes=["Select a Time", "18:00", "18:15", "18:30"];
+  var availableTimes=["Select a Time", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
 
   function submitForm(formData) {
@@ -38,7 +38,7 @@ const BookingForm = (props) => {
 
             <div>
               <label htmlFor="book-guests">Number of Guests:</label>
-              <input id="book-guests" min="1" max="10" type="number" placeholder={0} value={guests} onChange={(e) => setGuests(e.target.value)} required />
+              <input id="book-guests" min="1" max="10" type="number" placeholder={1} value={guests} onChange={(e) => setGuests(e.target.value)} required />
             </div>
 
             <div>
