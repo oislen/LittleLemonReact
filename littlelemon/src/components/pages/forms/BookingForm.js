@@ -3,6 +3,8 @@ import { useState } from "react";
 
 const BookingForm = (props) => {
 
+  const minimumDate = new Date().toISOString().split('T')[0];
+
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("1");
@@ -15,7 +17,7 @@ const BookingForm = (props) => {
     props.submitForm(e);
   };
 
-  const handleChange = (e) => {
+  const handleDateChange = (e) => {
     setDate(e);
     props.dispatch(e);
   };
@@ -26,7 +28,7 @@ const BookingForm = (props) => {
           <fieldset className="formField">
             <div>
               <label htmlFor="book-date">Choose Date:</label>
-              <input id="book-date" value={date} type="date" onChange={(e) => handleChange(e.target.value)} required />
+              <input id="book-date" value={date} min={minimumDate} type="date" onChange={(e) => handleDateChange(e.target.value)} required />
             </div>
 
             <div>
