@@ -143,8 +143,28 @@ main article {
     background-position: 75%;
     color: white;
     min-height: 200px;
-    text-align: center;;
+    text-align: center;
 }
+
+/* About */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .column {
+    flex-basis: 50%;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .column figure {
+    padding: 0px 12px;
+
+  }
 
 /* Bookings */
 

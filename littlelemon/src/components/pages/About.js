@@ -3,11 +3,11 @@ import aboutImage from "../../assets/Mario and Adrian A.jpg";
 const About = () => {
   return (
     <>
-      <section className="webPage">
-          <article className="banner">
+      <section >
+          <article >
             <h1>About</h1>
-            <div >
-              <div >
+            <div className="row">
+              <div className="column">
               <p>
                 Based in Chicago, Illinois, Little Lemon is a family owned
                 Mediterranean restaurant, focused on traditional recipes served with a
@@ -36,10 +36,10 @@ const About = () => {
                 cuisines from the mediterranean region.
               </p>
             </div>
-            <div >
-              <figure className="banner-img">
+            <div className="column">
+              <figure className="figure" >
                 <img src={aboutImage}  alt="Mario and Adrian"/>
-                <figcaption >
+                <figcaption className="figure-caption">
                   Little Lemon owners Mario and Adrian.
                 </figcaption>
               </figure>
