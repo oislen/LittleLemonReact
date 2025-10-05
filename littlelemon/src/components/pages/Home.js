@@ -21,7 +21,7 @@ const Home = () => {
           <p>
             Experience the vibrant flavors of our new Mediterranean menu, inspired by fresh ingredients and timeless coastal recipes. From savory mezze to fragrant grilled specialties, every dish is crafted to transport you to the sun-kissed shores of the Mediterranean.
           </p>
-          <p>
+          <p className="pButton">
             <a href="/menu">See our new menu</a>
           </p>
         </article>
@@ -31,7 +31,7 @@ const Home = () => {
           <p>
             Reserve your table today and make sure you don't miss out on an unforgettable dining experience. Whether it's a romantic evening or a gathering with friends, we'll have everything ready to welcome you.
           </p>
-          <p>
+          <p className="pButton">
             <a href="/book">Book your table now</a>
           </p>
         </article>
