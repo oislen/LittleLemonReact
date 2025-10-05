@@ -1,6 +1,6 @@
 import logo from "../assets/Logo.svg";
 
-const Nav = () => {
+const Header = () => {
   return (
     <nav className="nav">
         <img src={logo} alt="logo" />
@@ -22,4 +22,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Header;
