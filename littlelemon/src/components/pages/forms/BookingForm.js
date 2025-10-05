@@ -3,26 +3,35 @@ import { useState } from "react";
 
 const BookingForm = (props) => {
 
-  const [times, setTimes] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
-  var availableTimes=["18:00", "18:15", "18:30"];
-  var date=Date();
+  var availableTimes=["Select a Time", "18:00", "18:15", "18:30"];
+  var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
+
+  function submitForm(formData) {
+    alert("Booking successful!")
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitForm(e);
+  };
 
   return (
       <section>
-        <form>
+        <form onSubmit={handleSubmit}>
           <fieldset className="formField">
             <div>
               <label htmlFor="book-date">Choose Date:</label>
-              <input id="book-date" value={date} type="date" required />
+              <input id="book-date" value={date} type="date" onChange={(e) => setDate(e.target.value)} required />
             </div>
 
             <div>
               <label htmlFor="book-time">Choose Time:</label>
-              <select id="book-time" value={times} onChange={(e) => setTimes(e.target.value)} required >
-                <option value="">Select a Time</option>
+              <select id="book-time" value={time} onChange={(e) => setTime(e.target.value)} required >
                 {availableTimes.map((availableTimes) => {return <option key={availableTimes}>{availableTimes}</option>;})}
               </select>
             </div>
@@ -34,19 +43,13 @@ const BookingForm = (props) => {
 
             <div>
               <label htmlFor="book-occasion">Occasion:</label>
-              <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} required >
-                <option value="">Select an option</option>
-                <option>Birthday</option>
-                <option>Anniversary</option>
+              <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} >
+                {occasionTypes.map((occasionTypes) => {return <option key={occasionTypes}>{occasionTypes}</option>;})}
               </select>
             </div>
 
             <div className="btnReceive">
-              <input
-                aria-label="On Click"
-                type="submit"
-                value={"Make Your Reservation"}
-              />
+              <input aria-label="On Click" type="submit" value={"Make Your Reservation"} />
             </div>
           </fieldset>
         </form>
