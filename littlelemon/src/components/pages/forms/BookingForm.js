@@ -8,16 +8,16 @@ const BookingForm = (props) => {
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
 
-  var availableTimes=["Select a Time", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
   var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
-
-  function submitForm(formData) {
-    alert("Booking successful!")
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(e);
+    alert("Booking successful!");
+  };
+
+  const handleChange = (e) => {
+    setDate(e);
+    props.dispatch(e);
   };
 
   return (
@@ -26,13 +26,13 @@ const BookingForm = (props) => {
           <fieldset className="formField">
             <div>
               <label htmlFor="book-date">Choose Date:</label>
-              <input id="book-date" value={date} type="date" onChange={(e) => setDate(e.target.value)} required />
+              <input id="book-date" value={date} type="date" onChange={(e) => handleChange(e.target.value)} required />
             </div>
 
             <div>
               <label htmlFor="book-time">Choose Time:</label>
               <select id="book-time" value={time} onChange={(e) => setTime(e.target.value)} required >
-                {availableTimes.map((availableTimes) => {return <option key={availableTimes}>{availableTimes}</option>;})}
+                {props.availableTimes.map((availableTimes) => {return <option key={availableTimes}>{availableTimes}</option>;})}
               </select>
             </div>
 
