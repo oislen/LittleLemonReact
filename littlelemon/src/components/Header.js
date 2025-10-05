@@ -2,7 +2,7 @@ import logo from "../assets/Logo.svg";
 
 const Header = () => {
   return (
-    <header>
+    <header className="header">
       <nav className="nav">
           <img src={logo} alt="logo" />
         <ul className="nav-links">
