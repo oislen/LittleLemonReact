@@ -12,14 +12,14 @@ Create a local [node js](https://nodejs.org/en/download) environment for the Lit
 
 
 ```
-npm ci --prefix littlelemon
+npm ci
 ```
 
 Run the node tests and start the Little Lemon Web app using the following commands and the local node environment:
 
 ```
-npm run test --prefix littlelemon --watchAll
-npm start --prefix littlelemon
+npm test
+npm start
 ```
 
 Once the web app is running, navigate to localhost:3000 in your preferred browser
