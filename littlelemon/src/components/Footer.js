@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div>
-        <img src={footerImage} />
+        <img src={footerImage} alt=""/>
       </div>
       <div>
         <p>Copyright Little Lemon</p>
