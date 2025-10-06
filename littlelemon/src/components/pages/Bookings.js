@@ -1,7 +1,14 @@
+import {useNavigate} from "react-router-dom";
 import BookingForm from "./forms/BookingForm";
 import aboutImage from "../../assets/lemon dessert B.jpg";
 
 const Bookings = (props) => {
+  const navigate = useNavigate();
+  function submitForm(formData) {
+    if (props.submitAPI(formData)) {
+      navigate("/confirmed");
+    }
+  }
   return (
     <>
       <section>
@@ -9,7 +16,7 @@ const Bookings = (props) => {
           <div className="row">
             <div className="column">
               <h2>Bookings</h2>
-              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={props.submitForm}/>
+              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={submitForm}/>
             </div>
             <div className="column">
               <figure className="figure" >
