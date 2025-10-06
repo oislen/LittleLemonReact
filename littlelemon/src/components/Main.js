@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About"
 import Menu from "./pages/Menu"
 import Bookings from "./pages/Bookings"
+import BookingConfirmation from "./pages/BookingConfirmation"
 
 const Main = () => {
 
@@ -43,10 +44,6 @@ const Main = () => {
   const initialState = fetchAPI(new Date());
   const [state, dispatch] = useReducer(updateTimes, initialState);
 
-  function submitForm(formData) {
-    alert("Booking successful!");
-  }
-
   return (
     <main>
       <Router>
@@ -54,7 +51,8 @@ const Main = () => {
           <Route  path="/" element={<Home />} />
           <Route  path="/about" element={<About />} />
           <Route  path="/menu" element={<Menu />} />
-          <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitForm={submitForm} />} />
+          <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitAPI={submitAPI} />} />
+          <Route path="/confirmed" element={<BookingConfirmation />} />
         </Routes>
       </Router>
     </main>
