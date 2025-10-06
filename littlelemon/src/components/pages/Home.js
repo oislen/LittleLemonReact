@@ -6,18 +6,11 @@ import openImg from "../../assets/Mario and Adrian b.jpg";
 const Home = () => {
   return (
     <>
-      <section>
-        <article id="hero">
-          <h1>30% Off This Weekend</h1>
-          <p>
-              Enjoy an exclusive special deal on your bill this weekend only. Treat yourself to your favorites and make the most of this limited-time offer before it's gone.
-          </p>
-        </article>
-      </section>
+      <Hero />
       <section>
         <article>
           <h2>Our New Menu</h2>
-          <img src={menuImg} />
+          <img src={menuImg} alt="" />
           <p>
             Experience the vibrant flavors of our new Mediterranean menu, inspired by fresh ingredients and timeless coastal recipes. From savory mezze to fragrant grilled specialties, every dish is crafted to transport you to the sun-kissed shores of the Mediterranean.
           </p>
@@ -27,7 +20,7 @@ const Home = () => {
         </article>
         <article>
           <h2>Book a table</h2>
-          <img src={bookImg} />
+          <img src={bookImg} alt="" />
           <p>
             Reserve your table today and make sure you don't miss out on an unforgettable dining experience. Whether it's a romantic evening or a gathering with friends, we'll have everything ready to welcome you.
           </p>
@@ -37,7 +30,7 @@ const Home = () => {
         </article>
         <article>
           <h2>Opening Hours</h2>
-          <img src={openImg} />
+          <img src={openImg} alt="" />
           <p>
             The Little Lemon Restaurant is open 7 days a week, except for public holidays. 
           </p>
