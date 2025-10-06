@@ -12,7 +12,7 @@ Create a local [node js](https://nodejs.org/en/download) environment for the Lit
 
 
 ```
-npm ci
+npm ci --prefix littlelemon
 ```
 
 Run the node tests and start the Little Lemon Web app using the following commands and the local node environment:
