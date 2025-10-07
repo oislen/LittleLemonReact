@@ -4,10 +4,13 @@ import { useState } from "react";
 const BookingForm = (props) => {
 
   const minimumDate = new Date().toISOString().split('T')[0];
+  const defaultTime = props.availableTimes[0];
+  const minimumNumberOfGuests = 1;
+  const maximumNumberOfGuests = 10;
 
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState("1");
+  const [date, setDate] = useState(minimumDate);
+  const [time, setTime] = useState(defaultTime);
+  const [guests, setGuests] = useState(minimumNumberOfGuests);
   const [occasion, setOccasion] = useState("");
 
   var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
@@ -40,7 +43,7 @@ const BookingForm = (props) => {
 
             <div>
               <label htmlFor="book-guests">Number of Guests:</label>
-              <input id="book-guests" min="1" max="10" type="number" placeholder={1} value={guests} onChange={(e) => setGuests(e.target.value)} required />
+              <input id="book-guests" min={minimumNumberOfGuests} max={maximumNumberOfGuests } type="number" placeholder={1} value={guests} onChange={(e) => setGuests(e.target.value)} required />
             </div>
 
             <div>
