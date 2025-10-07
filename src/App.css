@@ -117,9 +117,9 @@ main article {
 }
 
 #hero {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("./assets/Bruschetta.jpg");
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('./assets/restaurant_inside.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 75%;
     color: white;
     min-height: 200px;
     text-align: center;
@@ -133,16 +133,6 @@ main article {
 
 #hero p {
     max-width: 100%;
-    margin-left: 16rem;
-    margin-right: 2rem;
-}
-
-#hero {
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('./assets/restaurant_inside.jpg');
-    background-size: cover;
-    background-position: 75%;
-    color: white;
-    min-height: 200px;
     text-align: center;
 }
 
