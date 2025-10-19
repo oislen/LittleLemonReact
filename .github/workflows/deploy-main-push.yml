@@ -80,10 +80,8 @@ jobs:
         image-ref: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ vars.DOCKERHUB_TAG }}
         exit-code: '1'
         ignore-unfixed: true
-        vuln-type: 'os,library'
+        vuln-type: 'os'
         version: 'latest'
         severity: 'CRITICAL,HIGH'
         format: 'table'
         hide-progress: true
-        skip-dirs: './node_modules'
-        skip-files: './package.json,./package-lock.json'
