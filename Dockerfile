@@ -1,5 +1,5 @@
 # get base image
-FROM node:22.18.0
+FROM node:22.20.0
 
 # set environment variables
 ENV user=user
