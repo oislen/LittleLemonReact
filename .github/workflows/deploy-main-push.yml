@@ -29,6 +29,9 @@ jobs:
         scan-ref: '.'
         exit-code: '1'
         version: 'latest'
+        format: 'table'
+        hide-progress: true
+        ignore-unfixed: true
 
   node-unittests:
     needs: release-tag
@@ -73,9 +76,12 @@ jobs:
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:
+        scan-type: 'image'
         image-ref: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ vars.DOCKERHUB_TAG }}
-        format: 'table'
         exit-code: '1'
         ignore-unfixed: true
         vuln-type: 'os,library'
+        version: 'latest'
         severity: 'CRITICAL,HIGH'
+        format: 'table'
+        hide-progress: true
