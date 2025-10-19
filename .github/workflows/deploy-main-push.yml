@@ -28,6 +28,7 @@ jobs:
         scan-type: 'fs'
         scan-ref: '.'
         exit-code: '1'
+        version: 'latest'
 
   node-unittests:
     needs: release-tag
