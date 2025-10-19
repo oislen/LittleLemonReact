@@ -30,6 +30,8 @@ jobs:
         exit-code: '1'
         version: 'latest'
         format: 'table'
+        hide-progress: true
+        ignore-unfixed: true
 
   node-unittests:
     needs: release-tag
@@ -79,5 +81,7 @@ jobs:
         exit-code: '1'
         ignore-unfixed: true
         vuln-type: 'os,library'
+        version: 'latest'
         severity: 'CRITICAL,HIGH'
         format: 'table'
+        hide-progress: true

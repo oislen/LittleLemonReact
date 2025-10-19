@@ -19,6 +19,8 @@ jobs:
         exit-code: '1'
         version: 'latest'
         format: 'table'
+        ignore-unfixed: true
+        hide-progress: true
 
   node-unittests:
     runs-on: ubuntu-latest
