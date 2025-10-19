@@ -85,3 +85,5 @@ jobs:
         severity: 'CRITICAL,HIGH'
         format: 'table'
         hide-progress: true
+        skip-dirs: './node_modules'
+        skip-files: './package.json,./package-lock.json'
