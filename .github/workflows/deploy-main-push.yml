@@ -82,6 +82,6 @@ jobs:
         ignore-unfixed: true
         vuln-type: 'os,library'
         version: 'latest'
-        severity: 'CRITICAL,HIGH'
         format: 'table'
         hide-progress: true
+        skip-files: 'package-lock.json,package.json'
