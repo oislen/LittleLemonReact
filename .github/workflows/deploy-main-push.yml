@@ -29,12 +29,7 @@ jobs:
         scan-ref: '.'
         exit-code: '1'
         version: 'latest'
-        format: 'sarif'
-        output: 'trivy-fs-scan-results.sarif'
-    - name: Upload Trivy scan results to GitHuh Security Tab
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-          sarif_file: 'trivy-fs-scan-results.sarif'
+        format: 'json'
 
   node-unittests:
     needs: release-tag
@@ -79,14 +74,10 @@ jobs:
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:
+        scan-type: 'image'
         image-ref: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPO }}:${{ vars.DOCKERHUB_TAG }}
         exit-code: '1'
         ignore-unfixed: true
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH'
-        format: 'sarif'
-        output: 'trivy-image-scan-results.sarif'
-    - name: Upload Trivy scan results to GitHuh Security Tab
-      uses: github/codeql-action/upload-sarif@v3
-      with:
-          sarif_file: 'trivy-image-scan-results.sarif'
+        format: 'json'
