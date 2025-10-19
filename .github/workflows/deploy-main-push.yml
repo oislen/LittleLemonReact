@@ -85,4 +85,3 @@ jobs:
         severity: 'CRITICAL,HIGH'
         format: 'table'
         hide-progress: true
-        skip-files: 'package-lock.json,package.json'
