@@ -17,6 +17,7 @@ jobs:
         scan-type: 'fs'
         scan-ref: '.'
         exit-code: '1'
+        version: '0.67.2'
 
   node-unittests:
     runs-on: ubuntu-latest
