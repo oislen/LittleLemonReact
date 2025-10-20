@@ -11,7 +11,7 @@ import BookingConfirmation from "./pages/BookingConfirmation"
 
 const Main = () => {
 
-  var url=useRef("http://localhost//api/menu-items");
+  var url=useRef("http://localhost:8000/api/menu-items");
   var method=useRef("GET");
 
   const [menuItems, setMenuItems] = useState([]);
