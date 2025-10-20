@@ -2,7 +2,21 @@ const Menu = () => {
   return (
     <>
       <section>
-        <h2>Menu</h2>
+        <article>
+          <h2>Menu</h2>
+          <div className="row">
+            <div className="column">
+              <h2>Starters</h2>
+              <h2> Mains</h2>
+              <h2>Desserts</h2>
+              <h2>Drinks</h2>
+            </div>
+            <div className="column">
+              <figure></figure>
+              <figure></figure>
+            </div>
+          </div>
+        </article>
       </section>
     </>
   );
