@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route   } from "react-router-dom";
-import { useReducer } from "react";
+import { useReducer, useState, useEffect, useRef } from "react";
 
 import fetchAPI  from "./utilities/fetchAPI";
+import littleLemonAPI  from "./utilities/littleLemonAPI";
 import Home from "./pages/Home";
 import About from "./pages/About"
 import Menu from "./pages/Menu"
@@ -9,6 +10,22 @@ import Bookings from "./pages/Bookings"
 import BookingConfirmation from "./pages/BookingConfirmation"
 
 const Main = () => {
+
+  var url=useRef("http://localhost//api/menu-items");
+  var method=useRef("GET");
+
+  const [menuItems, setMenuItems] = useState([]);
+
+  async function getMenuItems() {
+        let response = await littleLemonAPI(url.current, method.current);
+        setMenuItems(response);
+      };
+
+  useEffect(() => {
+    getMenuItems();
+  }, []);
+
+  console.log(menuItems)
 
   const submitAPI = function(formData) {
       return true;
