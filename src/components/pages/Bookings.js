@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import BookingForm from "./forms/BookingForm";
-import aboutImage from "../../assets/lemon dessert B.jpg";
+import aboutImage from "../../assets/mario-and-adrian.jpg";
 
 const Bookings = (props) => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Bookings = (props) => {
               <figure className="figure" >
                 <img src={aboutImage}  alt="Mario and Adrian"/>
                 <figcaption className="figure-caption">
-                  Lemon Dessert
+                  Little Lemon owners Mario and Adrian.
                 </figcaption>
               </figure>
             </div>
