@@ -12,7 +12,6 @@ import BookingConfirmation from "./pages/BookingConfirmation"
 const Main = () => {
 
   const userPlatform = navigator.platform;
-  console.log(userPlatform);
   let apiUrl;
   if (userPlatform.indexOf("Win") !== -1) {
     apiUrl = "http://localhost:8000/api/menu-items";
