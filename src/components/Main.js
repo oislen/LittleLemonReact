@@ -11,7 +11,15 @@ import BookingConfirmation from "./pages/BookingConfirmation"
 
 const Main = () => {
 
-  var url=useRef("http://localhost:8000/api/menu-items");
+  const userPlatform = navigator.platform;
+  console.log(userPlatform);
+  let apiUrl;
+  if (userPlatform.indexOf("Win") !== -1) {
+    apiUrl = "http://localhost:8000/api/menu-items";
+  } else {
+    apiUrl = "http://host.docker.internal:8000/api/menu-items";
+  }
+  var url=useRef(apiUrl);
   var method=useRef("GET");
 
   const [menuItems, setMenuItems] = useState([]);
