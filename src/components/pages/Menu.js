@@ -1,4 +1,7 @@
-const Menu = () => {
+import unpackMenuItems from "../utilities/unpackMenuItems"
+
+const Menu = (props) => {
+  console.log(unpackMenuItems(props.menuItems));
   return (
     <>
       <section>
@@ -7,7 +10,7 @@ const Menu = () => {
           <div className="row">
             <div className="column">
               <h2>Starters</h2>
-              <h2> Mains</h2>
+              <h2>Mains</h2>
               <h2>Desserts</h2>
               <h2>Drinks</h2>
             </div>
