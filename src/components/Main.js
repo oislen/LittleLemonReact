@@ -25,8 +25,6 @@ const Main = () => {
     getMenuItems();
   }, []);
 
-  console.log(menuItems)
-
   const submitAPI = function(formData) {
       return true;
   };
@@ -44,7 +42,7 @@ const Main = () => {
         <Routes>
           <Route  path="/" element={<Home />} />
           <Route  path="/about" element={<About />} />
-          <Route  path="/menu" element={<Menu />} />
+          <Route  path="/menu" element={<Menu menuItems={menuItems} />} />
           <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitAPI={submitAPI} />} />
           <Route path="/confirmed" element={<BookingConfirmation />} />
         </Routes>
