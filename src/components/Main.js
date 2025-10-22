@@ -6,6 +6,7 @@ import littleLemonAPI  from "./utilities/littleLemonAPI";
 import Home from "./pages/Home";
 import About from "./pages/About"
 import Menu from "./pages/Menu"
+import MenuItem from "./pages/MenuItem"
 import Bookings from "./pages/Bookings"
 import BookingConfirmation from "./pages/BookingConfirmation"
 
@@ -47,10 +48,11 @@ const Main = () => {
     <main>
       <Router>
         <Routes>
-          <Route  path="/" element={<Home />} />
-          <Route  path="/about" element={<About />} />
-          <Route  path="/menu" element={<Menu menuItems={menuItems} />} />
-          <Route  path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitAPI={submitAPI} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu menuItems={menuItems} />} />
+          <Route path="/menu/:name" element={<MenuItem menuItems={menuItems} />} />
+          <Route path="/book" element={<Bookings availableTimes={state} dispatch={dispatch} submitAPI={submitAPI} />} />
           <Route path="/confirmed" element={<BookingConfirmation />} />
         </Routes>
       </Router>
