@@ -1,15 +1,23 @@
 const Listing = (props) => {
   return (
     <>
-    <span>
-    <a href="/home">Home</a>/<a href="/Menu">Menu</a>/{props.menuItem.name}
-    </span>
     <div className="row">
-    <div className="column">
+      <div className="column">
+        <span>
+        <a href="/home">Home</a>/<a href="/menu">Menu</a>/{props.menuItem.name}
+        </span>
         <h2>{props.menuItem.name}</h2>
         <p>{props.menuItem.description}</p>
         <p>Price ${props.menuItem.price}</p>
-    </div>
+      </div>
+        <div className="column">
+          <figure className="figure" >
+            <img src={require(`../../../assets/${props.menuItem.name}.jpg`)} alt={props.menuItem.name} />
+              <figcaption className="figure-caption">
+                {props.menuItem.name}
+              </figcaption>
+          </figure>
+        </div>
     </div>
     </>
   );
