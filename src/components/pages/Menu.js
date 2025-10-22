@@ -1,11 +1,10 @@
 import unpackMenuItems from "../utilities/unpackMenuItems"
-import Item from "./partials/Item"
+import MenuListing from "./partials/MenuListing"
 import grilledFishImage from "../../assets/Grilled fish B.jpg";
 import lemonDessertImage from "../../assets/lemon dessert B.jpg";
 
 const Menu = (props) => {
   const unpackedMenuItems = unpackMenuItems(props.menuItems);
-  console.log(unpackedMenuItems);
   return (
     <>
       <section>
@@ -14,13 +13,13 @@ const Menu = (props) => {
           <div className="row">
             <div className="column">
               <h3>Starters</h3>
-                {unpackedMenuItems.get("starters").map((menuItem) => <Item item={menuItem}/>)}
+                {unpackedMenuItems.get("starters").map((menuItem) => <MenuListing menuItem={menuItem} key={menuItem.menuitem_id} />)}
               <h3>Mains</h3>
-                {unpackedMenuItems.get("mains").map((menuItem) => <Item item={menuItem}/>)}
+                {unpackedMenuItems.get("mains").map((menuItem) => <MenuListing menuItem={menuItem} key={menuItem.menuitem_id} />)}
               <h3>Desserts</h3>
-                {unpackedMenuItems.get("desserts").map((menuItem) => <Item item={menuItem}/>)}
+                {unpackedMenuItems.get("desserts").map((menuItem) => <MenuListing menuItem={menuItem} key={menuItem.menuitem_id} />)}
               <h3>Drinks</h3>
-                {unpackedMenuItems.get("drinks").map((menuItem) => <Item item={menuItem}/>)}
+                {unpackedMenuItems.get("drinks").map((menuItem) => <MenuListing menuItem={menuItem} key={menuItem.menuitem_id} />)}
             </div>
             <div className="column">
               <figure className="figure" >
