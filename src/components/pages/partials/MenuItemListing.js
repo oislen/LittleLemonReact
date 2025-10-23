@@ -3,10 +3,10 @@ const Listing = (props) => {
     <>
     <div className="row">
       <div className="column">
-        <span>
-        <a href="/home">Home</a>/<a href="/menu">Menu</a>/{props.menuItem.name}
-        </span>
         <h2>{props.menuItem.name}</h2>
+        <h3>Ingredients</h3>
+        <p>{props.menuItem.ingredients}</p>
+        <h3>Description</h3>
         <p>{props.menuItem.description}</p>
         <p>Price ${props.menuItem.price}</p>
       </div>
