@@ -8,7 +8,6 @@ const MenuItem = (props) => {
     <>
       <section>
         <article>
-          <h2>Menu Item</h2>
           {menuItems.map((menuItem) => <MenuItemListing menuItem={menuItem} key={menuItem.menuitem_id}/>)}
         </article>
       </section>
