@@ -1,7 +1,7 @@
 import Hero from "./partials/Hero"
-import menuImg from "../../assets/Grilled fish C.jpg";
+import menuImg from "../../assets/Grill.jpg";
 import bookImg from "../../assets/salad.jpg";
-import openImg from "../../assets/Mario and Adrian b.jpg";
+import openImg from "../../assets/head_chef.jpg";
 
 const Home = () => {
   return (
