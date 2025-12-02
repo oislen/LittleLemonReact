@@ -8,12 +8,12 @@ const BookingForm = (props) => {
   const minimumNumberOfGuests = 1;
   const maximumNumberOfGuests = 10;
 
+  const [fullName, setFullName] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [guests, setGuests] = useState(minimumNumberOfGuests);
   const [date, setDate] = useState(minimumDate);
   const [time, setTime] = useState(defaultTime);
-  const [guests, setGuests] = useState(minimumNumberOfGuests);
-  const [occasion, setOccasion] = useState("");
-
-  var occasionTypes=["Select an Occasion", "Birthday", "Anniversary"]
+  const [comment, setComment] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +29,22 @@ const BookingForm = (props) => {
       <section>
         <form onSubmit={handleSubmit}>
           <fieldset className="formField">
+
+            <div>
+              <label htmlFor="book-fullname">Full name:</label>
+              <input id="book-fullname" value={fullName} minLength="2" maxLength="128" type="text" onChange={(e) => setFullName(e.target.value)} required />
+            </div>
+
+            <div>
+              <label htmlFor="book-mobile-number">Mobile Number</label>
+              <input id="book-mobile-number" value={mobileNumber} minLength="2" maxLength="32" type="text" onChange={(e) => setMobileNumber(e.target.value)} required />
+            </div>
+
+            <div>
+              <label htmlFor="book-guests">Number of Guests:</label>
+              <input id="book-guests" min={minimumNumberOfGuests} max={maximumNumberOfGuests } type="number" placeholder={1} value={guests} onChange={(e) => setGuests(e.target.value)} required />
+            </div>
+
             <div>
               <label htmlFor="book-date">Choose Date:</label>
               <input id="book-date" value={date} min={minimumDate} type="date" onChange={(e) => handleDateChange(e.target.value)} required />
@@ -42,15 +58,8 @@ const BookingForm = (props) => {
             </div>
 
             <div>
-              <label htmlFor="book-guests">Number of Guests:</label>
-              <input id="book-guests" min={minimumNumberOfGuests} max={maximumNumberOfGuests } type="number" placeholder={1} value={guests} onChange={(e) => setGuests(e.target.value)} required />
-            </div>
-
-            <div>
-              <label htmlFor="book-occasion">Occasion:</label>
-              <select id="book-occasion" key={occasion} value={occasion} onChange={(e) => setOccasion(e.target.value)} >
-                {occasionTypes.map((occasionTypes) => {return <option data-testid="book-occasion-option" key={occasionTypes}>{occasionTypes}</option>;})}
-              </select>
+              <label htmlFor="book-comment">Comment:</label>
+              <input id="book-comment" value={comment} maxLength="256" type="text" onChange={(e) => setComment(e.target.value)} />
             </div>
 
             <div className="btnReceive">
