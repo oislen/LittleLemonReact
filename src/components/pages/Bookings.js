@@ -15,7 +15,7 @@ const Bookings = (props) => {
         <article>
           <div className="row">
             <div className="column">
-              <h2>Bookings</h2>
+              <h2>Make a reservation</h2>
               <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={submitForm}/>
             </div>
             <div className="column">
