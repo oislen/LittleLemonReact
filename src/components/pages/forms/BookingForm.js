@@ -3,26 +3,19 @@ import { useState } from "react";
 
 const BookingForm = (props) => {
 
-  const minimumDate = new Date().toISOString().split('T')[0];
-  const defaultTime = props.availableTimes[0];
+  const minimumDateTime = new Date().toISOString().slice(0, -8);
   const minimumNumberOfGuests = 1;
   const maximumNumberOfGuests = 10;
 
   const [fullName, setFullName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [guests, setGuests] = useState(minimumNumberOfGuests);
-  const [date, setDate] = useState(minimumDate);
-  const [time, setTime] = useState(defaultTime);
+  const [dateTime, setDateTime] = useState(minimumDateTime);
   const [comment, setComment] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     props.submitForm(e);
-  };
-
-  const handleDateChange = (e) => {
-    setDate(e);
-    props.dispatch(e);
   };
 
   return (
@@ -46,15 +39,8 @@ const BookingForm = (props) => {
             </div>
 
             <div>
-              <label htmlFor="book-date">Choose Date:</label>
-              <input id="book-date" value={date} min={minimumDate} type="date" onChange={(e) => handleDateChange(e.target.value)} required />
-            </div>
-
-            <div>
-              <label htmlFor="book-time">Choose Time:</label>
-              <select id="book-time" value={time} onChange={(e) => setTime(e.target.value)} required >
-                {props.availableTimes.map((availableTimes) => {return <option data-testid="book-time-option" key={availableTimes}>{availableTimes}</option>;})}
-              </select>
+              <label htmlFor="book-datetime">Date Time:</label>
+              <input id="book-datetime" value={dateTime} min={minimumDateTime} type="datetime-local" onChange={(e) => setDateTime(e.target.value)} required />
             </div>
 
             <div>
