@@ -16,7 +16,7 @@ const Bookings = (props) => {
           <div className="row">
             <div className="column">
               <h2>Make a reservation</h2>
-              <BookingForm availableTimes={props.availableTimes} dispatch={props.dispatch} submitForm={submitForm}/>
+              <BookingForm submitForm={submitForm}/>
             </div>
             <div className="column">
               <figure className="figure" >
