@@ -9,7 +9,7 @@ ENV CI=true
 # install required software and programmes for development environment
 RUN apt-get update
 RUN apt-get install -y apt-utils vim curl wget unzip tree htop adduser
-RUN apt-get install -y libtiff-dev=4.5.0-6+deb12u3 libtiff6=4.5.0-6+deb12u3 libtiffxx6=4.5.0-6+deb12u3
+RUN apt-get install -y libtiff-dev=4.5.0-6+deb12u3 libtiff6=4.5.0-6+deb12u3 libtiffxx6=4.5.0-6+deb12u3 linux-libc-dev=6.1.158-1
 
 # set up home environment
 RUN adduser ${user}
