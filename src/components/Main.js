@@ -19,12 +19,11 @@ const Main = () => {
     apiUrl = "http://host.docker.internal:8000/api/menu-items";
   }
   var url=useRef(apiUrl);
-  var method=useRef("GET");
 
   const [menuItems, setMenuItems] = useState([]);
 
   async function getMenuItems() {
-        let response = await littleLemonAPI(url.current, method.current);
+        let response = await littleLemonAPI(url.current, "GET");
         setMenuItems(response);
       };
 
