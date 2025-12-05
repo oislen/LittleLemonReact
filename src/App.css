@@ -200,7 +200,7 @@ form, .confirm {
 }
 
 .formField {
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   font-size: 1.3rem;
 }
@@ -212,7 +212,7 @@ input, label {
   font-size: 1.3rem;
 }
 
-#book-date, #book-time, #book-guests, #book-occasion {
+#book-date, #book-time, #book-guests, #book-occasion, #book-fullname, #book-mobile-number, #book-comment, #book-datetime {
   background: #bdbdbd43;
   padding: 8px 24px;
   border: none;
